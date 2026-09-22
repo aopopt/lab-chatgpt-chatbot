@@ -14,7 +14,7 @@ python-dotenv
 # 웹 서비스 (Day 3)
 flask
 streamlit
-gradio
+gradio<6             # 6.x 에서 ChatInterface(type=...) 제거됨
 
 # 최신 기술 — LangChain / RAG / MCP (Day 3)
 # Day 3 실습(RAG·Agent)은 이 저장소의 notebooks/ 로 진행한다.
@@ -24,7 +24,7 @@ langchain-community
 langchain-text-splitters
 faiss-cpu               # RAG 벡터스토어 (06_rag.ipynb)
 pymupdf                 # PDF 문서 RAG (PyMuPDFLoader — 내 문서로 교체 시)
-mcp                     # MCP 서버 (mcp_demo/library_server.py)
+mcp<2                   # 2.x 에서 FastMCP → MCPServer 로 개명됨. MCP 서버 (mcp_demo/library_server.py)
 
 # 노트북
 jupyter

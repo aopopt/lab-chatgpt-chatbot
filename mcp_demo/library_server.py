@@ -6,12 +6,10 @@
 실행:
     python mcp_demo/library_server.py        # stdio 로 동작
 
-OpenAI Codex CLI 등록 예 (~/.codex/config.json):
-    {
-      "mcpServers": {
-        "library-tools": { "command": "python", "args": ["mcp_demo/library_server.py"] }
-      }
-    }
+OpenAI Codex CLI 등록 예 (~/.codex/config.toml):
+    [mcp_servers.library-tools]
+    command = "python"
+    args = ["mcp_demo/library_server.py"]
 """
 from mcp.server.fastmcp import FastMCP
 
