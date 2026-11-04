@@ -33,8 +33,9 @@ with st.sidebar:
         st.rerun()
     st.caption("FAQ:")
     # 버튼은 누른 그 회차에만 True — 선택이 남는 radio 와 달리 rerun 때 재전송되지 않는다
-    faq = next((q for q in ["연차 며칠?", "재택 규정?", "API 키 관리법?"]
-                if st.button(q)), None)
+    # 리스트로 먼저 모두 그린다 (next() 로 단락 평가하면 누른 버튼 뒤의 버튼이 사라진다)
+    clicked = [q for q in ["연차 며칠?", "재택 규정?", "API 키 관리법?"] if st.button(q)]
+    faq = clicked[0] if clicked else None
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=temperature)
 
