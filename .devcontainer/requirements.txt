@@ -2,7 +2,7 @@
 # Dev Container 가 생성될 때 자동 설치된다 — 수강생은 직접 설치할 필요 없음.
 
 # 데이터 처리 / 머신러닝 (Day 1)
-pandas
+pandas<3              # 교재 출력은 2.x 기준 (3.x 는 문자열 dtype 등 출력이 달라짐)
 numpy
 scikit-learn
 pyarrow            # parquet 저장/로드 (reviews_clean.parquet)
