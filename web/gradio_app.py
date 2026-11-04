@@ -16,7 +16,7 @@ load_dotenv()
 
 SYSTEM = "당신은 친절한 AI 어시스턴트입니다. 모르면 '확인 필요'라고만 답하세요."
 MAX_CHARS = 500  # 실습 5 Task 3 — 입력 길이 가드
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+llm = ChatOpenAI(model="gpt-6-luna", reasoning_effort="none", temperature=0.3)
 
 
 def respond(message, history):

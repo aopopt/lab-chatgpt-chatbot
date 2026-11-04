@@ -37,7 +37,7 @@ with st.sidebar:
     clicked = [q for q in ["연차 며칠?", "재택 규정?", "API 키 관리법?"] if st.button(q)]
     faq = clicked[0] if clicked else None
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=temperature)
+llm = ChatOpenAI(model="gpt-6-luna", reasoning_effort="none", temperature=temperature)
 
 # ── 대화 상태 ─────────────────────────────────────────────────────
 if "messages" not in st.session_state:

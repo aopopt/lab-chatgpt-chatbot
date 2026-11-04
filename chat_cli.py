@@ -11,7 +11,7 @@ from openai import OpenAI
 # 초기화
 load_dotenv()
 client = OpenAI()
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-6-luna"   # 호출마다 reasoning_effort="none" 을 함께 넣는다 (교재 5.3)
 
 # 상태
 history = []
@@ -35,6 +35,7 @@ def chat(message: str, temperature: float = 0.3) -> str:
     
     resp = client.chat.completions.create(
         model=MODEL,
+        reasoning_effort="none",
         temperature=temperature,
         messages=[{"role": "system", "content": SYSTEM}, *history],
     )

@@ -16,7 +16,7 @@ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 load_dotenv()
 
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-6-luna"   # 호출마다 reasoning_effort="none" 을 함께 넣는다 (교재 5.3)
 SYSTEM = "당신은 친절한 AI 어시스턴트입니다. 모르면 '확인 필요'라고만 답하세요."
 
 
@@ -45,7 +45,7 @@ def main():
     else:
         messages = []
 
-    llm = ChatOpenAI(model=MODEL, temperature=0.3)
+    llm = ChatOpenAI(model=MODEL, reasoning_effort="none", temperature=0.3)
 
     print("LangChain CLI — 입력하세요. /reset 으로 초기화, /quit 으로 종료합니다.")
     try:

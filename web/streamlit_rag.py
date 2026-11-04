@@ -51,7 +51,7 @@ def build_chain(file_bytes: bytes, suffix: str):
 
     vs = FAISS.from_documents(chunks, OpenAIEmbeddings(model="text-embedding-3-small"))
     retriever = vs.as_retriever(search_kwargs={"k": 3})
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+    llm = ChatOpenAI(model="gpt-6-luna", reasoning_effort="none", temperature=0)
 
     def fmt(ds):
         return "\n\n".join(d.page_content for d in ds)
